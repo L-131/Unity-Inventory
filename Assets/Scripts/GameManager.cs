@@ -56,7 +56,10 @@ public class GameManager : MonoBehaviour
         curDataNum = num;
     }
 
-
+    /// <summary>
+    /// 플레이어가 없으면 생성하고 플레이어 정보를 data에 맞춰 초기화
+    /// </summary>
+    /// <param name="data"></param>
     public void SetData(CharacterData data)
     {
         if (player == null)
@@ -64,6 +67,10 @@ public class GameManager : MonoBehaviour
             GameObject playerObj = Instantiate(playerPrefab);
             player = playerObj.GetComponent<Character>();
         }
-        player.InitPureStatus(data);
+        else
+        {
+            player = FindObjectOfType<Character>();
+        }
+            player.InitPureStatus(data);
     }
 }

@@ -29,7 +29,10 @@ public class Character : MonoBehaviour
 
 
 
-
+    /// <summary>
+    /// 플레이어 정보 초기화 함수
+    /// </summary>
+    /// <param name="data"></param>
     public void InitPureStatus(CharacterData data)
     {
         charaSprite = data.portrait;
@@ -45,6 +48,13 @@ public class Character : MonoBehaviour
         pureCP = data.cp;
     }
 
+    /// <summary>
+    /// 플레이어 장착 장비 스탯 초기화 함수
+    /// </summary>
+    /// <param name="ap"></param>
+    /// <param name="dp"></param>
+    /// <param name="hp"></param>
+    /// <param name="cp"></param>
     public void InitEquipItem(int ap, int dp, int hp, int cp)
     {
         equipAP = ap;

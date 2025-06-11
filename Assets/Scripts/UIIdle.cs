@@ -29,6 +29,10 @@ public class UIIdle : MonoBehaviour
     { 
         UpdateIdleStatus();
     }
+
+    /// <summary>
+    /// 캐릭터 정보를 가져와서 인벤토리 메인에 보여지는 것들 변경하기
+    /// </summary>
     public void UpdateIdleStatus()
     {
         showCharaImage.sprite = charaImage;

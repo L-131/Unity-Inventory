@@ -17,18 +17,14 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         //SynchroEandIsEquiped();
     }
 
+    /// <summary>
+    /// 아이템의 isEquiped와 E 를 동기화하는 함수인데 필요없어짐
+    /// </summary>
     private void SynchroEandIsEquiped()
     {
         for (int i = 0; i < UIManager.Instance.Inventory.items.Count; i++)
         {
-            if (UIManager.Instance.Inventory.items[i].isEquiped)
-            {
-                UIManager.Instance.Inventory.slots[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                UIManager.Instance.Inventory.slots[i].gameObject.SetActive(false);
-            }
+            UIManager.Instance.Inventory.slots[i].EisEquiped.gameObject.SetActive(UIManager.Instance.Inventory.items[i].isEquiped);
         }
     }
 
@@ -47,6 +43,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //이 if문을 밖으로 뺄까 했는데 장비장착해제는 여기서만 할것 같아서 일단 그대로 뒀어요
         if (curItem != null)
         {
             if (!curItem.isEquiped)

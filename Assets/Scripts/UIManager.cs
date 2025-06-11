@@ -42,6 +42,10 @@ public class UIManager : MonoBehaviour
         Inventory.gameObject.SetActive(false);
         CalcTotalEquipPlus();
     }
+
+    /// <summary>
+    /// 장비 착용으로 올라간 능력치 계산하고 반영하기
+    /// </summary>
     public void CalcTotalEquipPlus()
     {
         int totalEquipAP = 0;
